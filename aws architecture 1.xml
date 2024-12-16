@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="AWS Architecture" id="AWS_Architecture">
+    <mxGraphModel dx="800" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Frontend: S3 -->
+        <mxCell id="s3" value="Amazon S3 (Frontend)" style="shape=ellipse;fillColor=#FFCC00;strokeColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- CloudFront -->
+        <mxCell id="cloudfront" value="CloudFront" style="shape=ellipse;fillColor=#99CCFF;strokeColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="50" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway -->
+        <mxCell id="api_gateway" value="API Gateway" style="shape=ellipse;fillColor=#FF9999;strokeColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="450" y="50" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Lambda -->
+        <mxCell id="lambda" value="AWS Lambda" style="shape=ellipse;fillColor=#FFCC99;strokeColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="650" y="50" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- DynamoDB -->
+        <mxCell id="dynamodb" value="DynamoDB" style="shape=ellipse;fillColor=#99FF99;strokeColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="850" y="50" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="s3_to_cloudfront" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;" edge="1" parent="1" source="s3" target="cloudfront">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cloudfront_to_api" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;" edge="1" parent="1" source="cloudfront" target="api_gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="api_to_lambda" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;" edge="1" parent="1" source="api_gateway" target="lambda">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lambda_to_dynamodb" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;" edge="1" parent="1" source="lambda" target="dynamodb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
